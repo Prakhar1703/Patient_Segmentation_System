@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body{
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(233, 211, 255);
+            /* display: flex; */
+        }
+        .container{
+            height: auto;
+            width: 100vw;
+            background-color: rgb(248, 240, 255);
+            /* margin: 30px; */
+            margin-top: 30px;
+            border-radius: 40px;
+            padding: 30px;
+            box-shadow: 0px 0px 10px rgb(127, 2, 244);
+            margin-bottom: 30px;
+
+        }
+        hr {
+            position: relative;
+            top: 20px;
+            border: none;
+            height: 5px;
+            background: rgb(255, 0, 0);
+            margin-bottom: 50px;
+        }
+        label{
+            font-size: 20px;
+        }
+        .container2{
+            height: auto;
+            width: 90%;
+            padding: 20px;
+            font-size: 20px;
+
+            /* padding: 10px; */
+            align-items: center;
+            justify-content: center;
+            margin-left: 5%;
+            background-color: rgb(234, 235, 242);
+            border-radius: 40px;
+            box-shadow: 0px 0px 10px rgba(178, 17, 17, 0.5);
+            margin-top: 5%;
+            /* margin: 20px; */
+            margin-bottom: 5%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 align="center" style="letter-spacing: 5px;text-transform: uppercase;">Welcome To The <span style="color: red;">Diagnosis</span> Form</h2>
+        <hr>
+        <h3>Enter the Details of the form : </h3>
+        <br>
+        <!-- <br> -->
+        <form action="{{ url_for('diagnosis')}}" method="post">
+        <label for="name">Enter your Name: </label>
+        <input type="text" name="name">
+        <br>
+        <br>
+        <label for="age">Enter your age (in range 1 to 100) : </label>
+        <input type="number" min="1" max="100" name="age">
+        <br>
+        <br>
+        <label for="gender">Enter your Gender </label>
+        <select name="gender" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <br>
+        <br>
+        <hr style="height: 2px;">
+        <h3 align="center">-- Enter Your Symptoms (All are mandatory) --</h3>
+        <hr style="height: 2px;">
+        <label for="symptom1">Enter the symptom 1 * : </label>
+        <select id="symptom1" name="symptom1">
+            <option value ="muscle_wasting">MUSCLE WASTING</option>
+            <option value ="patches_in_throat">PATCHES IN THROAT</option>
+            <option value ="skin_rash">SKIN RASH</option>       
+            <option value ="pus_filled_pimples">PUS FILLED PIMPLES</option>
+            <option value ="vomiting">VOMITING</option>
+            <option value ="yellowish_skin">YELLOWISH SKIN</option>
+            <option value ="shivering">SHIVERING</option>       
+            <option value ="continuous_sneezing">CONTINUOUS SNEEZING</option>
+            <option value ="muscle_weakness">MUSCLE WEAKNESS</option>
+            <option value ="stiff_neck">STIFF NECK</option>     
+            <option value ="fatigue">FATIGUE</option>
+            <option value ="cough">COUGH</option>
+            <option value ="back_pain">BACK PAIN</option>       
+            <option value ="weakness_in_limbs">WEAKNESS IN LIMBS</option>
+            <option value ="itching">ITCHING</option>
+            <option value ="chills">CHILLS</option>
+            <option value ="tiredness">TIREDNESS</option>       
+            <option value ="high_fever">HIGH FEVER</option>     
+            <option value ="loss_of_taste">LOSS OF TASTE</option>
+            <option value ="loss_of_smell">LOSS OF SMELL</option>
+            <option value ="weight_loss">WEIGHT LOSS</option>   
+            <option value ="constipation">CONSTIPATION</option> 
+            <option value ="pain_during_bowel_movements">PAIN DURING BOWEL MOVEMENTS</option>
+            <option value ="stomach_pain">STOMACH PAIN</option> 
+            <option value ="acidity">ACIDITY</option>
+            <option value ="sunken_eyes">SUNKEN EYES</option>   
+            <option value ="breathlessness">BREATHLESSNESS</option>
+            <option value ="joint_pain">JOINT PAIN</option>     
+            <option value ="chest_pain">CHEST PAIN</option>     
+            <option value ="headache">HEADACHE</option>
+            <option value ="mood_swings">MOOD SWINGS</option>   
+            <option value ="weight_gain">WEIGHT GAIN</option>   
+            <option value ="indigestion">INDIGESTION</option>   
+            <option value ="neck_pain">NECK PAIN</option>       
+            <option value ="burning_micturition">BURNING MICTURITION</option>
+            <option value ="bladder_discomfort">BLADDER DISCOMFORT</option>
+            <option value ="cramps">CRAMPS</option>
+        </select>
+        <br>
+        <label for="symptom2">Enter the symptom 2 * : </label>
+        <select name="symptom2" id="symptom2">
+            <option value ="patches_in_throat">PATCHES IN THROAT</option>
+            <option value ="high_fever">HIGH FEVER</option>     
+            <option value ="pus_filled_pimples">PUS FILLED PIMPLES</option>
+            <option value ="blackheads">BLACKHEADS</option>     
+            <option value ="yellowish_skin">YELLOWISH SKIN</option>
+            <option value ="abdominal_pain">ABDOMINAL PAIN</option>
+            <option value ="chills">CHILLS</option>
+            <option value ="shivering">SHIVERING</option>       
+            <option value ="stiff_neck">STIFF NECK</option>     
+            <option value ="swelling_joints">SWELLING JOINTS</option>
+            <option value ="cough">COUGH</option>
+            <option value ="weakness_in_limbs">WEAKNESS IN LIMBS</option>
+            <option value ="neck_pain">NECK PAIN</option>       
+            <option value ="skin_rash">SKIN RASH</option>       
+            <option value ="fatigue">FATIGUE</option>
+            <option value ="vomiting">VOMITING</option>
+            <option value ="loss_of_taste">LOSS OF TASTE</option>
+            <option value ="tiredness">TIREDNESS</option>       
+            <option value ="loss_of_smell">LOSS OF SMELL</option>
+            <option value ="joint_pain">JOINT PAIN</option>     
+            <option value ="weight_loss">WEIGHT LOSS</option>   
+            <option value ="restlessness">RESTLESSNESS</option> 
+            <option value ="pain_during_bowel_movements">PAIN DURING BOWEL MOVEMENTS</option>
+            <option value ="pain_in_anal_region">PAIN IN ANAL REGION</option>
+            <option value ="stomach_pain">STOMACH PAIN</option> 
+            <option value ="nodal_skin_eruptions">NODAL SKIN ERUPTIONS</option>
+            <option value ="acidity">ACIDITY</option>
+            <option value ="ulcers_on_tongue">ULCERS ON TONGUE</option>
+            <option value ="dehydration">DEHYDRATION</option>   
+            <option value ="sunken_eyes">SUNKEN EYES</option>   
+            <option value ="breathlessness">BREATHLESSNESS</option>
+            <option value ="sweating">SWEATING</option>
+            <option value ="lethargy">LETHARGY</option>
+            <option value ="nausea">NAUSEA</option>
+            <option value ="dizziness">DIZZINESS</option>       
+            <option value ="chest_pain">CHEST PAIN</option>     
+            <option value ="mood_swings">MOOD SWINGS</option>   
+            <option value ="anxiety">ANXIETY</option>
+            <option value ="cold_hands_and_feet">COLD HANDS AND 
+            FEET</option>
+            <option value ="weight_gain">WEIGHT GAIN</option>   
+            <option value ="blister">BLISTER</option>
+            <option value ="indigestion">INDIGESTION</option>   
+            <option value ="headache">HEADACHE</option>
+            <option value ="knee_pain">KNEE PAIN</option>       
+            <option value ="weakness_of_one_body_side">WEAKNESS 
+            OF ONE BODY SIDE</option>
+            <option value ="loss_of_appetite">LOSS OF APPETITE</option>
+            <option value ="skin_peeling">SKIN PEELING</option> 
+            <option value ="bladder_discomfort">BLADDER DISCOMFORT</option>
+            <option value ="foul_smell_of urine">FOUL SMELL OF URINE</option>
+            <option value ="cramps">CRAMPS</option>
+            <option value ="bruising">BRUISING</option>
+        </select>
+        <br>
+        <label for="symptom3">Enter the symptom 3 * : </label>
+        <select name="symptom3" id="symptom3">
+            <option value ="high_fever">HIGH FEVER</option>
+            <option value ="extra_marital_contacts">EXTRA MARITAL CONTACTS</option>
+            <option value ="blackheads">BLACKHEADS</option>     
+            <option value ="scurrying">SCURRYING</option>       
+            <option value ="swelling_of_stomach">SWELLING OF STOMACH</option>
+            <option value ="abdominal_pain">ABDOMINAL PAIN</option>
+            <option value ="watering_from_eyes">WATERING FROM EYES</option>
+            <option value ="chills">CHILLS</option>
+            <option value ="swelling_joints">SWELLING JOINTS</option>
+            <option value ="movement_stiffness">MOVEMENT STIFFNESS</option>
+            <option value ="breathlessness">BREATHLESSNESS</option>
+            <option value ="neck_pain">NECK PAIN</option>       
+            <option value ="dizziness">DIZZINESS</option>       
+            <option value ="fatigue">FATIGUE</option>
+            <option value ="lethargy">LETHARGY</option>
+            <option value ="nausea">NAUSEA</option>
+            <option value ="yellowish_skin">YELLOWISH SKIN</option>
+            <option value ="cough">COUGH</option>
+            <option value ="loss_of_taste">LOSS OF TASTE</option>
+            <option value ="tiredness">TIREDNESS</option>       
+            <option value ="joint_pain">JOINT PAIN</option>     
+            <option value ="vomiting">VOMITING</option>
+            <option value ="restlessness">RESTLESSNESS</option> 
+            <option value ="pain_in_anal_region">PAIN IN ANAL REGION</option>
+            <option value ="bloody_stool">BLOODY STOOL</option> 
+            <option value ="burning_micturition">BURNING MICTURITION</option>
+            <option value ="stomach_pain">STOMACH PAIN</option> 
+            <option value ="nodal_skin_eruptions">NODAL SKIN ERUPTIONS</option>
+            <option value ="dyschromic_patches">DYSCHROMIC PATCHES</option>
+            <option value ="ulcers_on_tongue">ULCERS ON TONGUE</option>
+            <option value ="diarrhoea">DIARRHOEA</option>       
+            <option value ="dehydration">DEHYDRATION</option>   
+            <option value ="sweating">SWEATING</option>
+            <option value ="chest_pain">CHEST PAIN</option>     
+            <option value ="dark_urine">DARK URINE</option>     
+            <option value ="loss_of_appetite">LOSS OF APPETITE</option>
+            <option value ="loss_of_balance">LOSS OF BALANCE</option>
+            <option value ="weight_loss">WEIGHT LOSS</option>   
+            <option value ="anxiety">ANXIETY</option>
+            <option value ="mood_swings">MOOD SWINGS</option>   
+            <option value ="cold_hands_and_feet">COLD HANDS AND 
+            FEET</option>
+            <option value ="blister">BLISTER</option>
+            <option value ="red_sore_around_nose">RED SORE AROUND NOSE</option>
+            <option value ="headache">HEADACHE</option>
+            <option value ="blurred_and_distorted_vision">BLURRED AND DISTORTED VISION</option>
+            <option value ="knee_pain">KNEE PAIN</option>       
+            <option value ="hip_joint_pain">HIP JOINT PAIN</option>
+            <option value ="altered_sensorium">ALTERED SENSORIUM</option>
+            <option value ="weakness_of_one_body_side">WEAKNESS 
+            OF ONE BODY SIDE</option>
+            <option value ="spinning_movements">SPINNING MOVEMENTS</option>
+            <option value ="skin_peeling">SKIN PEELING</option> 
+            <option value ="silver_like_dusting">SILVER LIKE DUSTING</option>
+            <option value ="foul_smell_of urine">FOUL SMELL OF URINE</option>
+            <option value ="continuous_feel_of_urine">CONTINUOUS FEEL OF URINE</option>
+            <option value ="bruising">BRUISING</option>
+            <option value ="obesity">OBESITY</option>
+        </select>
+        <br>
+        <label for="symptom4">Enter the symptom 4 * : </label>
+        <select name="symptom4" id="symptom4">
+            <option value ="extra_marital_contacts">EXTRA MARITAL CONTACTS</option>
+            <option value ="high_fever">HIGH FEVER</option>     
+            <option value ="scurrying">SCURRYING</option>       
+            <option value ="distention_of_abdomen">DISTENTION OF ABDOMEN</option>
+            <option value ="swelling_of_stomach">SWELLING OF STOMACH</option>
+            <option value ="watering_from_eyes">WATERING FROM EYES</option>
+            <option value ="movement_stiffness">MOVEMENT STIFFNESS</option>
+            <option value ="painful_walking">PAINFUL WALKING</option>
+            <option value ="breathlessness">BREATHLESSNESS</option>
+            <option value ="family_history">FAMILY HISTORY</option>
+            <option value ="dizziness">DIZZINESS</option>       
+            <option value ="loss_of_balance">LOSS OF BALANCE</option>
+            <option value ="lethargy">LETHARGY</option>
+            <option value ="loss_of_appetite">LOSS OF APPETITE</option>
+            <option value ="nausea">NAUSEA</option>
+            <option value ="cough">COUGH</option>
+            <option value ="tiredness">TIREDNESS</option>       
+            <option value ="loss_of_taste">LOSS OF TASTE</option>
+            <option value ="vomiting">VOMITING</option>
+            <option value ="fatigue">FATIGUE</option>
+            <option value ="irregular_sugar_level">IRREGULAR SUGAR LEVEL</option>
+            <option value ="irritation_in_anus">IRRITATION IN ANUS</option>
+            <option value ="bloody_stool">BLOODY STOOL</option> 
+            <option value ="spotting_urination">SPOTTING URINATION</option>
+            <option value ="burning_micturition">BURNING MICTURITION</option>
+            <option value ="dyschromic_patches">DYSCHROMIC PATCHES</option>
+            <option value ="diarrhoea">DIARRHOEA</option>       
+            <option value ="chest_pain">CHEST PAIN</option>     
+            <option value ="dark_urine">DARK URINE</option>     
+            <option value ="yellowish_skin">YELLOWISH SKIN</option>
+            <option value ="yellowing_of_eyes">YELLOWING OF EYES</option>
+            <option value ="lack_of_concentration">LACK OF CONCENTRATION</option>
+            <option value ="sweating">SWEATING</option>
+            <option value ="restlessness">RESTLESSNESS</option> 
+            <option value ="headache">HEADACHE</option>
+            <option value ="mood_swings">MOOD SWINGS</option>   
+            <option value ="red_sore_around_nose">RED SORE AROUND NOSE</option>
+            <option value ="yellow_crust_ooze">YELLOW CRUST OOZE</option>
+            <option value ="weight_loss">WEIGHT LOSS</option>   
+            <option value ="excessive_hunger">EXCESSIVE HUNGER</option>
+            <option value ="blurred_and_distorted_vision">BLURRED AND DISTORTED VISION</option>
+            <option value ="hip_joint_pain">HIP JOINT PAIN</option>
+            <option value ="swelling_joints">SWELLING JOINTS</option>
+            <option value ="altered_sensorium">ALTERED SENSORIUM</option>
+            <option value ="spinning_movements">SPINNING MOVEMENTS</option>
+            <option value ="abdominal_pain">ABDOMINAL PAIN</option>
+            <option value ="passage_of_gases">PASSAGE OF GASES</option>
+            <option value ="small_dents_in_nails">SMALL DENTS IN NAILS</option>
+            <option value ="silver_like_dusting">SILVER LIKE DUSTING</option>
+            <option value ="continuous_feel_of_urine">CONTINUOUS FEEL OF URINE</option>
+            <option value ="obesity">OBESITY</option>
+            <option value ="swollen_legs">SWOLLEN LEGS</option>
+        </select>
+        <br>
+        <label for="symptom5">Enter the symptom 5 * : </label>
+        <select name="symptom5" id="symptom5">
+            <option value ="headache">HEADACHE</option>
+            <option value ="history_of_alcohol_consumption">HISTORY OF ALCOHOL CONSUMPTION</option>
+            <option value ="distention_of_abdomen">DISTENTION OF ABDOMEN</option>
+            <option value ="painful_walking">PAINFUL WALKING</option>
+            <option value ="family_history">FAMILY HISTORY</option>
+            <option value ="mucoid_sputum">MUCOID SPUTUM</option>
+            <option value ="loss_of_balance">LOSS OF BALANCE</option>
+            <option value ="high_fever">HIGH FEVER</option>     
+            <option value ="abdominal_pain">ABDOMINAL PAIN</option>
+            <option value ="loss_of_appetite">LOSS OF APPETITE</option>
+            <option value ="fatigue">FATIGUE</option>
+            <option value ="irregular_sugar_level">IRREGULAR SUGAR LEVEL</option>
+            <option value ="blurred_and_distorted_vision">BLURRED AND DISTORTED VISION</option>
+            <option value ="irritation_in_anus">IRRITATION IN ANUS</option>
+            <option value ="spotting_urination">SPOTTING URINATION</option>
+            <option value ="chest_pain">CHEST PAIN</option>     
+            <option value ="cough">COUGH</option>
+            <option value ="nausea">NAUSEA</option>
+            <option value ="dark_urine">DARK URINE</option>     
+            <option value ="yellowing_of_eyes">YELLOWING OF EYES</option>
+            <option value ="yellowish_skin">YELLOWISH SKIN</option>
+            <option value ="lack_of_concentration">LACK OF CONCENTRATION</option>
+            <option value ="diarrhoea">DIARRHOEA</option>       
+            <option value ="sweating">SWEATING</option>
+            <option value ="dizziness">DIZZINESS</option>       
+            <option value ="lethargy">LETHARGY</option>
+            <option value ="yellow_crust_ooze">YELLOW CRUST OOZE</option>
+            <option value ="stiff_neck">STIFF NECK</option>     
+            <option value ="excessive_hunger">EXCESSIVE HUNGER</option>
+            <option value ="swelling_joints">SWELLING JOINTS</option>
+            <option value ="unsteadiness">UNSTEADINESS</option> 
+            <option value ="passage_of_gases">PASSAGE OF GASES</option>
+            <option value ="internal_itching">INTERNAL ITCHING</option>
+            <option value ="breathlessness">BREATHLESSNESS</option>
+            <option value ="inflammatory_nails">INFLAMMATORY NAILS</option>
+            <option value ="small_dents_in_nails">SMALL DENTS IN NAILS</option>
+            <option value ="swollen_blood_vessels">SWOLLEN BLOOD VESSELS</option>
+            <option value ="swollen_legs">SWOLLEN LEGS</option>
+        </select>
+        <hr style="height: 2px;">
+        <h5 align="center" style="color:rgb(17, 69, 69)">To Check Your Report Click Below</h5>
+        <center>
+                <input type="submit" value="Click here" class="btn btn-primary" style="margin-top: 10px;">
+        </center>
+        </form>
+    </div>
+
+    {% for dict_item in answer %}
+        <div class="container2">
+            <h2 align="center" style="color: darkblue;
+            font-family: 'Ubuntu', sans-serif;font-size: 40px;margin-top: 15px;">Diagnosis Report</h2>
+            <hr>
+            {% for key,value in dict_item.items() %}
+                <p><span style="font-weight: 500;">{{key}}</span><span>{{value}}</span></p>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <style>
+        body{
+            align-items: center;
+            justify-content: center;
+            background-color: #fef2f6;
+            /* display: flex; */
+        }
+        .container{
+            height: 470px;
+            width: 95%;
+            border-radius: 50px;
+            /* background-image: linear-gradient(white,white,rgb(221, 166, 166),white,white); */
+            background-image: linear-gradient(to right,white,rgb(248, 237, 237),white);
+            margin-top: 4%;
+            min-height: 50%;
+            min-width: 50%;
+            /* -moz-box-shadow: 10px 10px 16px #000000;
+            -webkit-box-shadow: 10px 10px 16px #000000;
+            box-shadow: 10px 10px 16px #000000; */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: row;
+
+        }
+        .container2 img{
+            height: 100%;
+            width: 90%;
+            /* min-width: 80%;
+            min-height: 100%; */
+        }
+        .container2{
+            margin-top: 2%;
+            margin-left: 2%;
+            height: 85%;
+            width: 70%;
+            font-family: 'Poppins', sans-serif;
+        }
+        .my-text{
+        font-weight: 700;
+        /* text-transform:capitalize; */
+        font-size: 60px;
+        background-image: linear-gradient(
+            -225deg,
+            #231557 0%,
+            #44107a 29%,
+            #ff1361 67%,
+            #fff800 100%
+        );
+        background-size: auto auto;
+        background-clip: border-box;
+        color: #fff;
+        background-clip: text;
+        /* text-fill-color: transparent; */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 2s linear infinite;
+        display: inline-block;
+        }
+        .my-text2{
+            font-weight: 700;
+        /* text-transform:capitalize; */
+        font-size: 25px;
+        background-image: linear-gradient(
+            -225deg,
+            #150c36 0%,
+            #7410df 29%,
+            #b61b4e 67%,
+            #e5de12 100%
+        );
+        background-size: auto auto;
+        background-clip: border-box;
+        color: #fff;
+        background-clip: text;
+        /* text-fill-color: transparent; */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 2s linear infinite;
+        display: inline-block;
+        }
+        .my-text3{
+            font-weight: 700;
+        /* text-transform:capitalize; */
+        font-size: 25px;
+        background-image: linear-gradient(
+            -225deg,
+            #231557 0%,
+            #44107a 29%,
+            #ff1361 67%,
+            #fff800 100%
+        );
+        background-size: auto auto;
+        background-clip: border-box;
+        color: #fff;
+        background-clip: text;
+        /* text-fill-color: transparent; */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 2s linear infinite;
+        display: inline-block;
+        }
+        .buttons button{
+            align-items: center;
+            justify-items: center;
+            font-size: 20px;
+            background-color: #44107a;
+            color: white;
+        }
+        .buttons button:hover{
+            background-color: #7410df;
+            color: white;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+
+        <!-- <p>hello</p> -->
+        <div class="container2">
+            <img src="https://static.vecteezy.com/system/resources/previews/025/027/369/original/male-doctor-uniform-cartoon-character-pointing-at-empty-space-for-medical-healthcare-presentation-free-png.png" alt="the image is not loaded properly   ">
+        </div>
+        <div class="container3">
+            <span class="my-text">Hello to all <br> It's a Health Care Center  </span>
+            <br>
+            <br>
+            <span class="my-text3">Click Below To Start the Check up <span class="my-text2"><i class="bi bi-arrow-down-circle-fill"></i></span> </span>
+            <br>
+            <br>
+            <!-- <br> -->
+            <form action="{{url_for('forms')}}" method="get">
+              <span class="buttons">
+                  <button type="submit" class="btn btn-info">Start</button>
+              </span>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
