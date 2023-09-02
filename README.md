@@ -1,4 +1,5 @@
 Project Title – “Patient Segmentation System”
+
 Objectives:
 The objectives of a patient segmentation system are to enhance healthcare delivery and decision-making by categorizing patients into distinct groups based on various characteristics, attributes, and behaviours. These objectives aim to improve patient outcomes, resource allocation, and overall healthcare management. Here are the key objectives of a patient segmentation system:
 
